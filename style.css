@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  --pixel-size: 11;
+}
+
+body, div, main, section, h2, span, button, ul, p{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+
+    font-family: 'Press Start 2P', cursive;
+    user-select: none;
+    list-style: none;
+}
+body {
+    width: 100vh;
+    background-image: url("assets/bg.png");
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+.main-fechado {display: none;}
+.main-aberto {display: block;}
+main #jogo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+main #tela {
+    box-shadow: 2px 0px 25px 10px rgba(0, 0, 0, 0.755);
+}
+main #vida {
+    position: absolute;
+    top: 30%;
+    left: 5%;
+
+    box-shadow: 5px 2px 15px 2px #000000a4;
+    display: flex;
+    flex-direction: column-reverse;
+    border-radius: 5px;
+    background-color: black;
+    width: 80px;
+    height: 100px;
+}
+main #vida #vida-atual {
+    text-align: center;
+    color: whitesmoke;
+
+    border-radius: 5px;
+    background-color: rgba(255, 0, 0, 0.919);
+    width: 80px;
+    height: 100px;
+}
+main #vida #vida-atual #valor-vida {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+main #gemas{
+    position: absolute;
+    top: 50%;
+    left: 5%;
+
+    width: 80px;
+    height: 100px;
+
+    border-radius: 5px;
+    background-color: #654a39de;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+main #gemas h2{
+    color: whitesmoke;
+    font-size: 14px;
+}
+main #gemas span{
+    color: whitesmoke;
+}
+
+.modal {
+    position: fixed;
+    height: 100vw;
+    width: 100vw;   
+}
+.modal-fechado{
+    display: none;
+}
+.modal-aberto{
+    display: block;
+}
+#modal-inicio {
+    background-color: rgba(0, 0, 0, 0.25);
+
+}
+#modal-inicio button {
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+    padding: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #445919d9;
+
+    font-size: 22px;
+    color: whitesmoke;
+}
+#modal-inicio #play:hover{
+    background-color: #445919;
+    padding: 28px;
+    font-size: 24px;
+    transition: all 1s;
+    box-shadow: 5px 2px 15px 2px #5d774fa4;
+}
+#modal-inicio #play {
+    left: 50%;
+    top: 25%;
+}
+
+#modal-inicio .mini-botao {
+    left: 95%;
+    top: 5%;
+    
+    background-color: rgba(0, 0, 0, 0.515);
+    padding: 10px;
+}
+#modal-inicio .mini-botao img {
+    width: 28px;
+}
+#modal-inicio #regras {
+    top: 10%;
+}
+
+
+#modal-inicio .mini-botao:hover {
+    box-shadow: 1px 1px 5px 1px #5d774f69;
+    transition: 1s;
+    padding: 12px;
+}
+#modal-inicio .mini-botao:hover img {width: 30px;}
+
+
+#modal-regras {
+    text-align: center;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+
+    width: 400px;
+    height: 400px;
+    background-image: url("assets/icons/rules.png");
+    background-position: center;
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+#modal-regras h2 {
+    margin: 34px 0;
+    color: rgb(34, 34, 34);
+}
+#modal-regras ul {
+    text-align: left;
+}
+#modal-regras ul li {
+    padding: 10px 60px;
+    margin-left: 45px;
+    font-size: 16px;
+    
+    color: rgb(80, 20, 20);
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.631);
+}
+
+
+#modal-fim {
+    background-color: rgb(0, 0, 0);
+    
+}
+#modal-fim span {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 52px;
+}
+.modal-morte span {
+    color: rgb(145, 39, 39);
+}
+
+.modal-fim span {
+    position: absolute;
+    top: 20%;
+    left: 25%;
+
+    font-size: 58px;
+    color: rgb(57, 145, 39);
+}
+
+#modal-fim button {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #0000008c;
+
+    font-size: 22px;
+}
+
+.modal-morte button {
+    color: rgb(145, 39, 39);
+    border: 4px inset rgb(145, 39, 39);
+
+}
+
+.modal-fim button {
+    color: rgb(57, 145, 39);
+    border: 4px inset rgb(57, 145, 39);
+}
+
+#modal-fim button:hover{
+    border-style: outset;
+    padding: 22px;
+    font-size: 24px;
+    transition: 1s;
+}
+
+
+
+/* SPRITES */
+
+.parede {
+    background-image: url("assets/img.png");
+    width: 44px;
+    height: 44px;
+    image-rendering: pixelated;
+}
+.caminho {
+    background-image: url("assets/grama.png");
+    width: 44px;
+    height: 44px;
+    image-rendering: pixelated;
+}
+
+#inicio {
+    background-image: url("assets/grama.png");
+    width: 44px;
+    height: 44px;
+}
+
+#fim {
+    width: 44px;
+    height: 44px;
+}
+
+.invalido {
+    background-image: url("assets/img.png");
+}
+
+.valido {
+    background-image: url("assets/grama.png");
+}
+
+.pocao {
+    background-image: url('assets/sprite/pocao.png');
+    width: 40px;
+    height: 40px;
+    image-rendering: pixelated;
+}
+#boneco {
+    width: 44px;
+    height: 44px;
+    overflow: hidden;
+    position: relative;
+}
+#boneco #boneco-sprites {
+    animation: movimentacao 1s steps(3) infinite;
+    width: calc(12px * var(--pixel-size));
+    position: absolute;
+}
+.pixelart {
+    image-rendering: pixelated;
+}
+
+.boneco-inicio-fim{background-image: url('assets/sprite/baixo-parada.png');}
+
+.boneco-esquerda {top: -53px;}
+.boneco-direita {top: -96px;}
+.boneco-cima {top: -142px;}
+.boneco-baixo {top: -6px;}
+
+.monstro {
+    width: 45px;
+    margin-top: 5px;
+    image-rendering: pixelated;
+}
+
+.gema {
+    margin-top: 10px;
+    margin-left: 10px;
+    image-rendering: pixelated;
+}
+
+@keyframes movimentacao {
+    from {
+        transform: translate3d(0px, 0, 0);
+    }
+    to {
+        transform: translate3d(-100%, 0, 0);
+    }
+}

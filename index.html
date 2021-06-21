@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labirinto</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <main class="main-fechado" id="main">
+        <section id="jogo">
+            <div id="tela">
+            </div>
+        </section>
+        <div id="vida"><div id="vida-atual"><p id="valor-vida">100</p></div></div>
+        <div id="gemas">
+            <h2>Gemas</h2>
+            <span id="gemas-coletadas">0/6</span>
+        </div>
+    </main>
+
+    <div class="modal" id="modal-inicio">
+        <button id="play">jogar</button>
+        <button class="mini-botao" id="audio"><img src="assets/icons/volume-off.png" alt="volume" id="volume-img"></button>
+        <button class="mini-botao" id="regras"><img id="regras-img" src="assets/icons/rules.png" alt="regras"></button>
+    </div>
+    <div id="modal-regras" class="modal-fechado">
+        <h2>regras</h2>
+        <ul>
+            <li>cuidado ao lutar contra os monstros</li>
+            <li>colete todas as gemas para poder fugir do labirinto</li>
+            <li>caso esteja com pouca saúde, beba algumas pocoes</li>
+        </ul>
+    </div>
+
+    <div class="modal modal-fechado" id="modal-fim">
+        <span id="mensagem"></span>
+        <button id="reiniciar">reiniciar</button>
+    </div>
+    
+    <audio id="musica-jogo" autoplay>
+        <source src="assets/music.mp4" type="audio/mpeg">
+    </audio>
+
+    <script src="mapas.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

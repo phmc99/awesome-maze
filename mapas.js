@@ -1,0 +1,17 @@
+const map = [
+    "WWWWWWWWWWWWWWWWWWWWW",
+    "W   W  D  W4    W W W",
+    "W W W WWW WWWWW W W W",
+    "W WPW  3W     W W E W",
+    "W WWWWWWW W WWW W W W",
+    "W         W   E W W W",
+    "W WWW WWWWW WWWWW W W",
+    "W W2D W   W W     W W",
+    "W WWWWW W W W WWW W F",
+    "S     E W W W WPW WWW",
+    "WWWWW W W W W W W W5W",
+    "W  D  W6W W   W W W W",
+    "W WWWWWWW WWWWW W W W",
+    "W      1W       W E W",
+    "WWWWWWWWWWWWWWWWWWWWW",
+];
